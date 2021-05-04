@@ -2,11 +2,20 @@
 class Account {
   constructor() {
     this.balance = 0;
+    this.statement = [];
   }
 
   deposit(amount) {
     this.balance += amount;
   }
+
+  withdraw(amount) {
+    this.balance -= amount;
+  }
+
+
+
+
 
 }
 
