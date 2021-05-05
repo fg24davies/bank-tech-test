@@ -1,30 +1,33 @@
+const Transaction =  require('./transaction.js')
+
+const CREDIT = "credit"
+const DEBIT = "debit"
 
 class Account {
+  
   constructor() {
-    this.balance = 0.00;
+    this.balance = 0;
     this.statement = [];
+    //this.transaction = new Transaction();
   }
 
-  deposit(amount, date = new Date().toLocaleDateString()) {
-    this.balance += amount;
-    const transaction = { 
-      "amount": amount.toFixed(2),
-      "date": date,
-      "type": "credit",
-      "balance": this.balance.toFixed(2)
-   };
-   this.statement.push(transaction);
+  transaction(amount, balance, type) {
+    return new Transaction(amount, balance, type);
+  }
+
+  deposit(amount) {
+    this.statement.push(this.transaction(amount, this.balance, CREDIT)); 
+    console.log('statement', this.statement)
   }
 
   withdraw(amount, date = new Date().toLocaleDateString()) {
     this.balance -= amount;
-    const transaction = { 
-      "amount": amount.toFixed(2),
-      "date": date,
-      "type": "debit",
-      "balance": this.balance.toFixed(2)
-    };
-    this.statement.push(transaction);
+    console.log('balance', this.balance)
+    this.transaction.type = DEBIT;
+    this.transaction.amount = amount.toFixed(2);
+    this.transaction.date = date;
+    this.transaction.balance = parseFloat(this.balance).toFixed(2);
+    this.statement.push(this.transaction);
   }
 
   formatTransactions() {

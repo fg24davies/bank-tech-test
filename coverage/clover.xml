@@ -1,27 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1620225229841" clover="3.2.0">
-  <project timestamp="1620225229842" name="All files">
-    <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6" elements="28" coveredelements="27" complexity="0" loc="18" ncloc="18" packages="1" files="1" classes="1"/>
+<coverage generated="1620232843163" clover="3.2.0">
+  <project timestamp="1620232843163" name="All files">
+    <metrics statements="30" coveredstatements="30" conditionals="4" coveredconditionals="3" methods="8" coveredmethods="8" elements="42" coveredelements="41" complexity="0" loc="30" ncloc="30" packages="1" files="2" classes="2"/>
     <file name="bankAccount.js" path="/Users/floradavies/Projects/makers_weekly_challenges/bank-tech-test-js/src/bankAccount.js">
-      <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
-      <line num="4" count="4" type="stmt"/>
-      <line num="5" count="4" type="stmt"/>
+      <metrics statements="25" coveredstatements="25" conditionals="3" coveredconditionals="2" methods="7" coveredmethods="7"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
       <line num="9" count="4" type="stmt"/>
       <line num="10" count="4" type="stmt"/>
-      <line num="16" count="4" type="stmt"/>
-      <line num="20" count="2" type="stmt"/>
-      <line num="21" count="2" type="stmt"/>
+      <line num="15" count="4" type="stmt"/>
+      <line num="19" count="4" type="stmt"/>
+      <line num="20" count="4" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
       <line num="27" count="2" type="stmt"/>
-      <line num="31" count="2" type="stmt"/>
-      <line num="32" count="2" type="stmt"/>
-      <line num="33" count="6" type="stmt"/>
-      <line num="34" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="29" count="2" type="stmt"/>
+      <line num="30" count="2" type="stmt"/>
+      <line num="34" count="2" type="stmt"/>
       <line num="35" count="2" type="stmt"/>
-      <line num="37" count="4" type="stmt"/>
-      <line num="40" count="2" type="stmt"/>
-      <line num="44" count="1" type="stmt"/>
-      <line num="48" count="2" type="stmt"/>
-      <line num="53" count="1" type="stmt"/>
+      <line num="36" count="6" type="stmt"/>
+      <line num="37" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="2" type="stmt"/>
+      <line num="40" count="4" type="stmt"/>
+      <line num="43" count="2" type="stmt"/>
+      <line num="47" count="1" type="stmt"/>
+      <line num="51" count="2" type="stmt"/>
+      <line num="56" count="1" type="stmt"/>
+    </file>
+    <file name="transaction.js" path="/Users/floradavies/Projects/makers_weekly_challenges/bank-tech-test-js/src/transaction.js">
+      <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <line num="4" count="4" type="stmt"/>
+      <line num="5" count="4" type="stmt"/>
+      <line num="6" count="4" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
