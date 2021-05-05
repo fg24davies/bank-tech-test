@@ -23,8 +23,29 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+### Run the code and tests: 
 
-### How to run tests:
-
-Testing library is Jest
+Clone the repository
 Run `npm install`
+Run `npm run test`
+
+### Testing:
+
+Testing library is Jest and linter is ESLINT.
+There are no errors in eslint, all tests passing with the test coverage shown below:
+
+![image](https://user-images.githubusercontent.com/30720508/117179127-b95fe280-adca-11eb-8f18-fedaefcc99ca.png)
+
+
+The missing line in the coverage I think is referring to the use of the new Date() function which is being called when deposit is called, but it is not testing that. I am not sure how to do that in Jest.
+
+My second test is definitely testing state rather than behaviour.
+
+
+### Example of how the code works in the console
+
+![image](https://user-images.githubusercontent.com/30720508/117178597-232bbc80-adca-11eb-8121-95b57a494e05.png)
+
+
+
+
