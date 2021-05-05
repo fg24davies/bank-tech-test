@@ -1,17 +1,17 @@
 
 class Account {
   constructor() {
-    this.balance = 0;
+    this.balance = 0.00;
     this.statement = [];
   }
 
   deposit(amount, date = new Date().toLocaleDateString) {
     this.balance += amount;
     const transaction = { 
-      'amount': amount,
+      'amount': amount.toFixed(2),
       'date': date,
       'type': 'credit',
-      'balance': this.balance
+      'balance': this.balance.toFixed(2)
    };
    this.statement.push(transaction);
   }
@@ -19,10 +19,10 @@ class Account {
   withdraw(amount, date = new Date().toLocaleDateString) {
     this.balance -= amount;
     const transaction = { 
-      'amount': amount,
+      'amount': amount.toFixed(2),
       'date': date,
       'type': 'debit',
-      'balance': this.balance
+      'balance': this.balance.toFixed(2)
     };
     this.statement.push(transaction);
   }
@@ -31,10 +31,10 @@ class Account {
     return "date || credit || debit || balance\n";
   }
 
-  printStatement() {
-    console.log('the statement length', this.statement.length)
+  formatTransactions() {
     let transactionFormat = '';
-    for (let i = 0; i < this.statement.length; i++) {
+    for (let i = (this.statement.length - 1) ;i > -1; i--) {
+      console.log(i);
       transactionFormat += `${this.statement[i]['date']} || `;
       if (this.statement[i]['type'] === 'debit') {
         transactionFormat += `|| ${this.statement[i]['amount']} || ${this.statement[i]['balance']}\n`;
@@ -42,14 +42,16 @@ class Account {
         transactionFormat += `${this.statement[i]['amount']} || || ${this.statement[i]['balance']}\n`;
       }
     }
-    console.log(this.statementHeader() + transactionFormat);
-    return statementHeader() + transactionFormat;
+    return transactionFormat;
   }
 
+  printStatement() {
+    return this.statementHeader() + this.formatTransactions();
+  }
 
-  // _formatTransaction(date, type, balance) {
-    
-  // }
+  statementHeader() {
+    return "date || credit || debit || balance\n";
+  }
 
 }
 
