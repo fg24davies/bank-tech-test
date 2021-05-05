@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1620221691511" clover="3.2.0">
-  <project timestamp="1620221691511" name="All files">
-    <metrics statements="20" coveredstatements="19" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="6" elements="31" coveredelements="28" complexity="0" loc="20" ncloc="20" packages="1" files="1" classes="1"/>
+<coverage generated="1620225229841" clover="3.2.0">
+  <project timestamp="1620225229842" name="All files">
+    <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6" elements="28" coveredelements="27" complexity="0" loc="18" ncloc="18" packages="1" files="1" classes="1"/>
     <file name="bankAccount.js" path="/Users/floradavies/Projects/makers_weekly_challenges/bank-tech-test-js/src/bankAccount.js">
-      <metrics statements="20" coveredstatements="19" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="6"/>
+      <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="3" methods="6" coveredmethods="6"/>
       <line num="4" count="4" type="stmt"/>
       <line num="5" count="4" type="stmt"/>
       <line num="9" count="4" type="stmt"/>
@@ -12,18 +12,16 @@
       <line num="20" count="2" type="stmt"/>
       <line num="21" count="2" type="stmt"/>
       <line num="27" count="2" type="stmt"/>
-      <line num="31" count="0" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="33" count="6" type="stmt"/>
+      <line num="34" count="6" type="cond" truecount="2" falsecount="0"/>
       <line num="35" count="2" type="stmt"/>
-      <line num="36" count="2" type="stmt"/>
-      <line num="37" count="6" type="stmt"/>
-      <line num="38" count="6" type="stmt"/>
-      <line num="39" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="37" count="4" type="stmt"/>
       <line num="40" count="2" type="stmt"/>
-      <line num="42" count="4" type="stmt"/>
-      <line num="45" count="2" type="stmt"/>
-      <line num="49" count="1" type="stmt"/>
-      <line num="53" count="2" type="stmt"/>
-      <line num="58" count="1" type="stmt"/>
+      <line num="44" count="1" type="stmt"/>
+      <line num="48" count="2" type="stmt"/>
+      <line num="53" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>

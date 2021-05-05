@@ -11,7 +11,7 @@ describe('creates a new account', () => {
 });
 
 describe('deposit', () => {
-   const newAccount = new Account();
+  const newAccount = new Account();
   test('it creates a credit transaction', () => {
     const date = '01/01/01';
     newAccount.deposit(15, date);
@@ -30,7 +30,6 @@ describe('withdraw', () => {
 });
 
 describe('creating the bank statement', () => {
-
   const newAccount = new Account();
   const date1 = '10/01/2012'
   const date2 = '13/01/2012'
@@ -48,11 +47,9 @@ describe('creating the bank statement', () => {
   });
   
   test('it prints the list of transactions', () => {
-      expect(newAccount.printStatement()).toEqual( `date || credit || debit || balance\n
-      ${date3} || || 500.00 || 2500.00\n
-      ${date2} || 2000.00 || || 3000.00\n
-      ${date1} || 1000.00 || || 1000.00\n`);
+    console.log = jest.fn();     
+    newAccount.printStatement();
+    expect(console.log).toBeCalledTimes(1);
+    expect(console.log).toHaveBeenLastCalledWith(`date || credit || debit || balance\n${date3} || || 500.00 || 2500.00\n${date2} || 2000.00 || || 3000.00\n${date1} || 1000.00 || || 1000.00\n`);
   });
-
-
 });
