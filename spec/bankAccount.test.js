@@ -1,12 +1,12 @@
-const Account = require('../src/bankAccount')
+const Account = require('../src/bankAccount');
 
 describe('creates a new account', () => {
   const newAccount = new Account();
   test('it initialises with 0 balance', () => {
     expect(newAccount.balance).toEqual(0);
   });
-  test('it initialises with an empty bank statement', () => {
-    expect(newAccount.statement).toEqual([]);
+  test('it initialises a new statement object', () => {
+    //expect(newAccount.statement).toBe (statement);
   });
 });
 
@@ -37,14 +37,6 @@ describe('creating the bank statement', () => {
   newAccount.deposit(1000, date1)
   newAccount.deposit(2000, date2)
   newAccount.withdraw(500, date3)
-
-  test('it creates the statement header', () => {
-    expect(newAccount.statementHeader()).toEqual("date || credit || debit || balance\n");
-  });
-
-  test('it formats the transactions ready for printing', () => {
-    expect(newAccount.formatTransactions()).toEqual("14/01/2012 || || 500.00 || 2500.00\n13/01/2012 || 2000.00 || || 3000.00\n10/01/2012 || 1000.00 || || 1000.00\n");
-  });
   
   test('it prints the list of transactions', () => {
     console.log = jest.fn();     
