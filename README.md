@@ -27,3 +27,5 @@ date || credit || debit || balance
 ### Tests
 
 All of my tests are failing in this branch or they are passing because I've fudged them I think- because I cannot mock in Jest and struggling to figure it out from online resources! (Though I would also struggle in RSpec)
+
+![image](https://user-images.githubusercontent.com/30720508/117331360-95fe6b80-ae8e-11eb-94be-7556b6461a37.png)
