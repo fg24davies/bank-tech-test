@@ -24,7 +24,6 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-### How to run tests:
+### Tests
 
-Testing library is Jest
-Run `npm install`
+All of my tests are failing in this branch or they are passing because I've fudged them I think- because I cannot mock in Jest and struggling to figure it out from online resources! (Though I would also struggle in RSpec)
