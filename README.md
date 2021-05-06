@@ -23,6 +23,9 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+### Code Structure 
+
+I've written some comments explaining struggles in the code and not being able to get the class extraction quite right!
 
 ### Tests
 
