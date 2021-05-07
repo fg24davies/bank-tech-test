@@ -8,7 +8,7 @@ class Transaction {
     this.type = type;
     this.date = date;
   }
-  
+
 }
 
 module.exports = Transaction;

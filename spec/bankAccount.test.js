@@ -1,47 +1,43 @@
 const Account = require('../src/bankAccount');
+const Statement =  require("../src/statement.js");
+jest.mock('../src/statement.js');  //statement is now a mock constructor
+
+beforeAll(() => {
+    return newAccount = new Account();
+  });
+  
+beforeEach(() => {
+  Statement.mockClear();
+}) 
 
 describe('creates a new account', () => {
-  const newAccount = new Account();
   test('it initialises with 0 balance', () => {
     expect(newAccount.balance).toEqual(0);
   });
   test('it initialises a new statement object', () => {
-    //expect(newAccount.statement).toBe (statement);
+    //jest.spyOn(Statement, 'new').mockReturnValue('new statement')
+    expect(Statement).toHaveBeenCalledTimes(1);
   });
 });
 
-describe('deposit', () => {
-  const newAccount = new Account();
-  test('it creates a credit transaction', () => {
-    const date = '01/01/01';
-    newAccount.deposit(15, date);
-    expect(newAccount.statement).toEqual([{'amount': '15.00', 'date': '01/01/01', 'type': 'credit', 'balance': `${newAccount.balance.toFixed(2)}`}]);
+  test('deposit makes a new credit transaction', () => {
+    jest.spyOn(Date.prototype, 'toLocaleDateString').mockReturnValue('01/01/2001');
+    newAccount.deposit(15);
+    expect(newAccount.statement.transactions).toEqual([{'amount': '15.00', 'date': '01/01/2001', 'type': 'credit', 'balance': `${newAccount.balance.toFixed(2)}`}]);
   });
-});
 
-describe('withdraw', () => {
-   const newAccount = new Account();
-  test('it creates a new debit transaction', () => {
-    newAccount.deposit(30);
-    const date = '01/01/01';
-    newAccount.withdraw(10, date);
-    expect(newAccount.statement[1]).toEqual({'amount': '10.00', 'date': '01/01/01', 'type': 'debit', 'balance': `${newAccount.balance.toFixed(2)}`});
+  test('withdraw makes a new debit transaction', () => {
+    jest.spyOn(Date.prototype, 'toLocaleDateString').mockReturnValue('01/02/2001');
+    newAccount.withdraw(10);
+    expect(newAccount.statement.transactions[1]).toEqual({'amount': '10.00', 'date': '01/02/2001', 'type': 'debit', 'balance': `${newAccount.balance.toFixed(2)}`});
   });
-});
 
-describe('creating the bank statement', () => {
-  const newAccount = new Account();
-  const date1 = '10/01/2012'
-  const date2 = '13/01/2012'
-  const date3 = '14/01/2012'
-  newAccount.deposit(1000, date1)
-  newAccount.deposit(2000, date2)
-  newAccount.withdraw(500, date3)
-  
-  test('it prints the list of transactions', () => {
+  test('printStatement prints the statement of transactions', () => {
+    jest.spyOn(Date.prototype, 'toLocaleDateString').mockReturnValue('01/03/2001');
+    newAccount.deposit(1000);
     console.log = jest.fn();     
     newAccount.printStatement();
     expect(console.log).toBeCalledTimes(1);
-    expect(console.log).toHaveBeenLastCalledWith(`date || credit || debit || balance\n${date3} || || 500.00 || 2500.00\n${date2} || 2000.00 || || 3000.00\n${date1} || 1000.00 || || 1000.00\n`);
+    expect(console.log).toHaveBeenLastCalledWith("date || credit || debit || balance\n01/03/2001 || 1000.00 || || 1005.00\n01/02/2001 || || 10.00 || 5.00\n01/01/2001 || 15.00 || || 15.00\n");
   });
-});
+
