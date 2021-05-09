@@ -5,10 +5,10 @@ jest.mock('../src/statement.js');  //statement is now a mock constructor
 beforeAll(() => {
     return newAccount = new Account();
   });
-  
-beforeEach(() => {
-  Statement.mockClear();
-}) 
+
+// beforeEach(() => {
+//   Statement.mockClear();
+// }) 
 
 describe('creates a new account', () => {
   test('it initialises with 0 balance', () => {
@@ -19,6 +19,9 @@ describe('creates a new account', () => {
     expect(Statement).toHaveBeenCalledTimes(1);
   });
 });
+
+  // the following 3 tests are failing because I have mocked the statement class above
+  // I think I need to then mock the methods
 
   test('deposit makes a new credit transaction', () => {
     jest.spyOn(Date.prototype, 'toLocaleDateString').mockReturnValue('01/01/2001');
