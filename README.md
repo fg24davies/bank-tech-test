@@ -48,9 +48,3 @@ Testing is done with Jest. There is a snapshot of my test coverage below as it s
 
 To run all the tests:
 Run ```npm run test```
-
-
-
-
-
-
