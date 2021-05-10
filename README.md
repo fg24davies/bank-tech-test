@@ -42,7 +42,7 @@ Require the bankAccount module in node as below:
 
 ### Testing
 
-Testing is done with Jest. There is a snapshot of my test coverage below as it stands. Three tests are failing because I was trying to work out how to mock a class (mock the Statement class). I can mock that it's been created but I cannot mock the methods so the methods in Statement are breaking the tests.
+Testing is done with Jest. There is a snapshot of my test coverage below as it stands. Three tests are failing because I was trying to work out how to mock a class (mock the Statement class). If I don't mock the class then the tests pass but I know this is not best practise as then all my tests are dependent on every class working. I can mock that it's been created but I cannot mock the methods so the methods in Statement are breaking the tests.
 
 ![image](https://user-images.githubusercontent.com/30720508/117633430-ef5be880-b175-11eb-8c07-61f05a94de16.png)
 
