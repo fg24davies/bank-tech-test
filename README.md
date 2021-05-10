@@ -25,54 +25,26 @@ date || credit || debit || balance
 ```
 ### Code Structure
 
-I created the following user stories from the criteria
-```
-As a customer
-So I can use a bank account
-I would like to create a bank account
+After modelling my user stories based on nouns and actions, I made 3 classes - Bank Account, Transaction and Statement.
+A new transaction class object is created from the Account class by depositing or withdrawing money.
+The transaction is also saved into the Statement class in a method in Account but I'm not sure if this is good practise.
 
-As a bank account holder
-So I can save money
-I would like deposit money into my account (credit)
+### How to run the code
 
-As a bank account holder
-So I can spend money 
-I would like to withdraw money from my account (debit)
-
-As a bank account holder
-So I can track my spending
-I would like to be able to see a statement of my transactions with amount and date
-```
-
-I then did class modelling (using nouns and verbs) to work out that I wanted to have 3 classes: an Account, Transaction, Statement.
-However, I was not sure how to start with three classes so I thought I would write it all in one class and then extract into classes when I had a better idea and felt more confident with the testing, I am currently struggling to mock and dependencies in Jest so I wanted to write tests and code to begin with, without being blocked by this. 
-
-The instructions and test coverage and console below are for MAIN branch.
-This afternoon I began to do some class extraction/refactoring on the refactor1 branch (half the tests failing though at the moment and it's in a bit of a mess). I think I might just have got the Transaction/Account classes working together.
-
-### Run the code and tests: 
-
+The code is run in the Node console.
 Clone the repository
-Run `npm install`
-Run `npm run test`
+Run ```npm install```
+Run ```node```
+Require the bankAccount module in node as below:
 
-### Testing:
-
-Testing library is Jest and linter is ESLINT.
-There are no errors in eslint, all tests passing with the test coverage shown below:
-
-![image](https://user-images.githubusercontent.com/30720508/117179127-b95fe280-adca-11eb-8f18-fedaefcc99ca.png)
+![image](https://user-images.githubusercontent.com/30720508/117632819-5af18600-b175-11eb-9252-5be81fd853fb.png)
 
 
-The missing line in the coverage I think is referring to the use of the new Date() function which is being called when deposit is called, but it is not testing that. I am not sure how to do that in Jest.
+### Testing
 
-My second test is definitely testing state rather than behaviour.
+Testing is done with Jest. There is a snapshot of my test coverage below as it stands. Three tests are failing because I was trying to work out how to mock a class (mock the Statement class). If I don't mock the class then the tests pass but I know this is not best practise as then all my tests are dependent on every class working. I can mock that it's been created but I cannot mock the methods so the methods in Statement are breaking the tests.
 
+![image](https://user-images.githubusercontent.com/30720508/117633430-ef5be880-b175-11eb-8c07-61f05a94de16.png)
 
-### Example of how the code works in the console
-
-![image](https://user-images.githubusercontent.com/30720508/117178597-232bbc80-adca-11eb-8121-95b57a494e05.png)
-
-
-
-
+To run all the tests:
+Run ```npm run test```
