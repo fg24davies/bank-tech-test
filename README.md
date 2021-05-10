@@ -23,12 +23,34 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
-### Code Structure 
+### Code Structure
 
-I've written some comments explaining struggles in the code and not being able to get the class extraction quite right!
+After modelling my user stories based on nouns and actions, I made 3 classes - Bank Account, Transaction and Statement.
+A new transaction class object is created from the Account class by depositing or withdrawing money.
+The transaction is also saved into the Statement class in a method in Account but I'm not sure if this is good practise.
 
-### Tests
+### How to run the code
 
-All of my tests are failing in this branch or they are passing because I've fudged them I think- because I cannot mock in Jest and struggling to figure it out from online resources! (Though I would also struggle in RSpec)
+The code is run in the Node console.
+Clone the repository
+Run ```npm install```
+Run ```node```
+Require the bankAccount module in node as below:
 
-![image](https://user-images.githubusercontent.com/30720508/117331360-95fe6b80-ae8e-11eb-94be-7556b6461a37.png)
+![image](https://user-images.githubusercontent.com/30720508/117632819-5af18600-b175-11eb-9252-5be81fd853fb.png)
+
+
+### Testing
+
+Testing is done with Jest. There is a snapshot of my test coverage below as it stands. Three tests are failing because I was trying to work out how to mock a class (mock the Statement class). I can mock that it's been created but I cannot mock the methods so the methods in Statement are breaking the tests.
+
+![image](https://user-images.githubusercontent.com/30720508/117633430-ef5be880-b175-11eb-8c07-61f05a94de16.png)
+
+To run all the tests:
+Run ```npm run test```
+
+
+
+
+
+
